@@ -1,0 +1,5 @@
+# ignored folders
+__pycache__/
+
+# ignored files
+*.py[cod]
