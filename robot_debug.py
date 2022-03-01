@@ -1,7 +1,7 @@
 import serial
 import time
 
-ser = serial.Serial("COM5", 115200, timeout = 1)  # open serial port
+ser = serial.Serial("COM6", 115200, timeout = 1)  # open serial port
 time.sleep(2)  
 
 print(ser.readline().decode("utf-8").rstrip())
