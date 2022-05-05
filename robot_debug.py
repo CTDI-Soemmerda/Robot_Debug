@@ -1,7 +1,7 @@
 import serial
 import time
 
-ser = serial.Serial("COM5", 115200, timeout = 1)  # open serial port
+ser = serial.Serial("COM6", 115200, timeout = 1)  # open serial port
 
 time.sleep(2)
 
@@ -9,7 +9,7 @@ print(ser.readline().decode("utf-8").rstrip())
 
 # set home
 ser.write(str("G28" + '\n').encode())
-ser.write(str("G01 F100" + '\n').encode())
+ser.write(str("G01 F300" + '\n').encode())
 
 # put robot in different directions
 gcodes = []
@@ -33,7 +33,7 @@ gcodes.append("G01 Z-300")
 gcodes.append("G01 Z-280")
 
 count = 0
-count_max = 20
+count_max = 99
 
 while count < count_max: 
     for gcode in gcodes:
